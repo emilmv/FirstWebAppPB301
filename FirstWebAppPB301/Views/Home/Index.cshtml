@@ -1,5 +1,7 @@
-﻿@{
+﻿@model HomeVM
+@{
     Layout = null;
+    ViewData["Title"] = "Index";
 }
 <h1>Home index page</h1>
 <ul>
@@ -15,3 +17,18 @@
 <h1>Age: @ViewBag.age</h1>
 <h1>Age(ViewData): @ViewData["age"]</h1>
 <h1>Address: @TempData["address"]</h1>
+=============================
+<ul>
+    @foreach (var student in Model.Students)
+    {
+        <li>
+            <p>Student ID: @student.Id</p>
+            <p>Student Name: @student.Name</p>
+            <p>Group Name: @Model.GroupName</p>
+
+        </li>
+    }
+    <li>
+        <p>Specific Student Name: @Model.Student.Name</p>
+    </li>
+</ul>

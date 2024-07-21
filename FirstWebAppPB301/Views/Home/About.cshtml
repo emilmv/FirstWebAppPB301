@@ -1,1 +1,8 @@
-﻿<h1>Home About</h1>
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h1>Home About</h1>
+<h1>Name: @ViewData["name"]</h1>
+<h1>Age: @ViewBag.age</h1>
+<h1>Age(ViewData): @ViewData["age"]</h1>
+<h1>Address: @TempData["address"]</h1>

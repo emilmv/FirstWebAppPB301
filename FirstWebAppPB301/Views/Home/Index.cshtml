@@ -1,1 +1,17 @@
-﻿<h1>Home index page</h1>
+﻿@{
+    Layout = null;
+}
+<h1>Home index page</h1>
+<ul>
+    @{
+        int num = 12;
+        for (int i = 0; i < num; i++)
+        {
+            <li>@i</li>
+        }
+    }
+</ul>
+<h1>Name: @ViewData["name"]</h1>
+<h1>Age: @ViewBag.age</h1>
+<h1>Age(ViewData): @ViewData["age"]</h1>
+<h1>Address: @TempData["address"]</h1>

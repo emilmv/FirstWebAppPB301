@@ -1,5 +1,4 @@
-﻿using FirstWebAppPB301.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace FirstWebAppPB301.Controllers
 {
@@ -8,23 +7,26 @@ namespace FirstWebAppPB301.Controllers
         public IActionResult Index()
         {
             //return File("~/img/Road_in_Norway.jpg","image/jpg");
+            //return Json(new Product
+            //{
+            //Id = 1,
+            //Name = "Test",
+            //});
+            ViewData["name"] = "Emil";
+            ViewBag.age = 27;
+            TempData["address"] = "Baki";
             //return View();
-            return Json(new Product
-            {
-                Id = 1,
-                Name = "Test",
-            });
+            return RedirectToAction(nameof(About));
         }
         public IActionResult About()
         {
-            return View();
             //return Content("First WebApp of About");
+            return View();
         }
         public IActionResult Contact()
         {
             //return View();
-            return Content("First WebApp of Contact");
+            return RedirectToAction(nameof(About));
         }
     }
-
 }
